@@ -31,11 +31,11 @@ public class DeveloperData implements ApplicationRunner {
   public void run(ApplicationArguments args) throws Exception {
     
     // Add Test members
-    memberRepository.save(new Member("John", "Doe", "john.doe@email.com", "123 Main St.", "123456789", "1/1/2000", "M", "Premium"));
-    memberRepository.save(new Member("Jane", "Smith", "jane.smith@email.com", "456 Elm St.", "987654321", "12/25/1995", "F", "Standard"));
-    memberRepository.save(new Member("Bob", "Johnson", "bob.johnson@email.com", "789 Oak St.", "456789123", "7/4/1985", "M", "Premium"));
-    memberRepository.save(new Member("Emily", "Davis", "emily.davis@email.com", "246 Pine St.", "135791113", "3/12/1990", "F", "Standard"));
-    memberRepository.save(new Member("Michael", "Brown", "michael.brown@email.com", "369 Maple St.", "246810124", "6/6/1975", "M", "Premium"));
+    memberRepository.save(new Member("user1", "pass1", "user1@email.com", "John", "Doe", "123 Main St", "New York", "10001"));
+    memberRepository.save(new Member("user2", "pass2", "user2@email.com", "Jane", "Smith", "456 Elm St", "Los Angeles", "90001"));
+    memberRepository.save(new Member("user3", "pass3", "user3@email.com", "Bob", "Johnson", "789 Oak St", "Chicago", "60601"));
+    memberRepository.save(new Member("user4", "pass4", "user4@email.com", "Emily", "Brown", "246 Pine St", "Houston", "77001"));
+    memberRepository.save(new Member("user5", "pass5", "user5@email.com", "Michael", "Davis", "369 Cedar St", "Phoenix", "85001"));
 
     // Test colors
     String[] favoriteCarColors = {"green", "red", "blue"};
@@ -57,10 +57,10 @@ public class DeveloperData implements ApplicationRunner {
     memberRepository.saveAll(members);
 
     // Add Test cars
-    carRepository.save(new Car("Toyota", "Camry", 2020, 40000));
-    carRepository.save(new Car("Honda", "Civic", 2019, 35000));
-    carRepository.save(new Car("Tesla", "Model 3", 2021, 55000));
-    carRepository.save(new Car("Ford", "Mustang", 2018, 32000));
-    carRepository.save(new Car("Chevrolet", "Corvette", 2022, 75000));
+    carRepository.save(new Car("Toyota", "Camry", 150, 40000));
+    carRepository.save(new Car("Honda", "Civic", 200, 35000));
+    carRepository.save(new Car("Tesla", "Model 3", 350, 55000));
+    carRepository.save(new Car("Ford", "Mustang", 580, 32000));
+    carRepository.save(new Car("Chevrolet", "Corvette", 480, 75000));
   }
 }
