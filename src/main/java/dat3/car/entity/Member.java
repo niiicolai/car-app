@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.MapKeyColumn;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
@@ -17,38 +18,39 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
+@NoArgsConstructor
+@Getter 
+@Setter 
 public class Member {
 
   @Id
-  @Getter private String username;
+  private String username;
 
-  @Getter @Setter private String password;
-  @Getter @Setter private String email;
-  @Getter @Setter private String firstName;
-  @Getter @Setter private String lastName;
-  @Getter @Setter private String street;
-  @Getter @Setter private String city;
-  @Getter @Setter private String zip;
+  private String password;
+  private String email;
+  private String firstName;
+  private String lastName;
+  private String street;
+  private String city;
+  private String zip;
 
-  @Getter @Setter private boolean approved;
+  private boolean approved;
 
-  @Getter @Setter private int ranking;
+  private int ranking;
 
   @ElementCollection
-  @Getter @Setter private List<String> favoriteCarColors = new ArrayList<>();
+  private List<String> favoriteCarColors = new ArrayList<>();
 
   @ElementCollection
   @MapKeyColumn(name = "Description")
   @Column(name = "phoneNumber")
-  @Getter @Setter private Map<String, String> phones = new HashMap<>();
+  private Map<String, String> phones = new HashMap<>();
 
   @CreationTimestamp
-  @Getter @Setter private LocalDateTime created;
+  private LocalDateTime created;
 
   @UpdateTimestamp
-  @Getter @Setter private LocalDateTime lastEdited;
-
-  public Member() {}
+  private LocalDateTime lastEdited;
 
   public Member(
     String user,
